@@ -1,161 +1,189 @@
-# AQI Analysis & Forecasting System
+# Air Quality Analysis & Forecasting System
 
-A real-time Air Quality Index (AQI) monitoring and forecasting web application for Indian cities, built with Streamlit and powered by OpenWeatherMap API.
+A web-based Air Quality Index (AQI) monitoring and forecasting application developed using Python and Streamlit. The system provides real-time air quality insights, pollutant analysis, trend visualization, and machine learning-based forecasting for Indian cities.
+
+## Live Demo
+https://air-quality-analysis-olnmtutzp5vszazg8t8xny.streamlit.app/
+
+---
 
 ## Features
 
-### Live Demo:https://air-quality-analysis-olnmtutzp5vszazg8t8xny.streamlit.app/
-
 ### Real-Time AQI Monitoring
-- Live air quality data for any city in India
-- Comprehensive pollutant tracking (PM2.5, PM10, NO₂, O₃, CO, SO₂)
-- Color-coded AQI categories (Good, Moderate, Unhealthy, etc.)
-- Detailed pollutant breakdowns with health implications
+- Fetches live AQI data for Indian cities
+- Tracks major pollutants:
+  - PM2.5
+  - PM10
+  - NO₂
+  - SO₂
+  - CO
+  - O₃
+- Displays AQI categories with health impact indicators
+- Provides pollutant-wise analysis and recommendations
 
-### Advanced Forecasting
-- 7-day AQI predictions using polynomial regression
-- Configurable forecast periods (3-14 days)
-- Adjustable historical data windows (7-60 days)
-- Confidence intervals for prediction accuracy
+### AQI Forecasting using Machine Learning
+- Predicts AQI trends using Polynomial Regression
+- Supports forecasting for configurable periods
+- Uses historical pollutant data for training
+- Generates prediction confidence ranges
 
-### Multi-City Comparison
-- Side-by-side comparison of multiple cities
-- Interactive visualizations with Plotly
-- City rankings by AQI levels
-- Comparative pollutant analysis
+### Multi-City Comparative Analysis
+- Compare AQI across multiple cities
+- Rank cities based on pollution levels
+- Interactive visualizations using Plotly
+- Comparative pollutant trend analysis
+
+### Interactive Dashboard
+- Dynamic charts and graphs
+- User-friendly interface with Streamlit
+- Real-time data refresh functionality
+- Visual representation of environmental trends
+
+---
 
 ## Tech Stack
 
-- **Frontend**: Streamlit
-- **Data Visualization**: Plotly, Matplotlib, Seaborn
-- **Data Processing**: Pandas, NumPy
-- **Forecasting**: Scikit-learn (Polynomial Regression)
-- **API**: OpenWeatherMap Air Pollution API
+**Frontend**
+- Streamlit
 
-## Installation
+**Programming Language**
+- Python
 
-### Prerequisites
-- Python 3.8 or higher
-- OpenWeatherMap API key (free tier available)
+**Libraries**
+- Pandas
+- NumPy
+- Scikit-learn
+- Plotly
+- Matplotlib
 
-### Step 1: Clone the Repository
-\`\`\`bash
-git clone https://github.com/yourusername/aqi-analysis.git
-cd aqi-analysis
-\`\`\`
+**API Integration**
+- OpenWeatherMap Air Pollution API
 
-### Step 2: Create Virtual Environment (Recommended)
-\`\`\`bash
-# Windows
-python -m venv venv
-venv\Scripts\activate
+---
 
-# macOS/Linux
-python3 -m venv venv
-source venv/bin/activate
-\`\`\`
+## Machine Learning Implementation
 
-### Step 3: Install Dependencies
-\`\`\`bash
-pip install -r scripts/requirements.txt
-\`\`\`
+The forecasting module uses Polynomial Regression to identify AQI trends based on historical air quality data.
 
-### Step 4: Set Up API Key
+### Workflow:
+1. Collect historical AQI and pollutant values
+2. Perform preprocessing and feature extraction
+3. Train Polynomial Regression model
+4. Generate future AQI predictions
+5. Display results with visual trend analysis
 
-1. Get your free API key from [OpenWeatherMap](https://openweathermap.org/api)
-2. Create a `.env` file in the root directory:
-\`\`\`bash
-cp .env.example .env
-\`\`\`
-3. Open `.env` and add your API key:
-\`\`\`
-OPENWEATHER_API_KEY=your_actual_api_key_here
-\`\`\`
-
-### Step 5: Run the Application
-\`\`\`bash
-streamlit run app.py
-\`\`\`
-
-The app will open automatically in your browser at `http://localhost:8501`
-
-## Usage
-
-### Single City Analysis
-1. Select "Single City Analysis" tab
-2. Enter any Indian city name (e.g., Delhi, Mumbai, Bangalore)
-3. View current AQI, pollutant levels, and health recommendations
-4. Scroll down for 7-day forecast predictions
-
-### Multi-City Comparison
-1. Select "Multi-City Comparison" tab
-2. Enter multiple cities separated by commas
-3. Compare AQI levels, pollutants, and rankings
-4. Analyze trends across different regions
-
-### Customization Options
-- **Forecast Days**: Adjust prediction period (3-14 days)
-- **Historical Data**: Change data window for better predictions (7-60 days)
-- **Refresh Data**: Click refresh button for latest readings
+---
 
 ## Project Structure
 
-\`\`\`
-aqi-analysis/
-├── app.py                      # Main Streamlit application
-├── .env                        # Environment variables (not in git)
-├── .env.example               # Example environment file
+```bash
+AQI-Analysis/
+│
+├── app.py
+├── .env
+├── .env.example
 ├── scripts/
-│   └── requirements.txt       # Python dependencies
-└── README.md                  # This file
-\`\`\`
+│   └── requirements.txt
+│
+└── README.md
+```
 
-## API Information
+---
 
-This application uses the [OpenWeatherMap Air Pollution API](https://openweathermap.org/api/air-pollution) which provides:
-- Current air pollution data
-- Historical data (past 5 days)
-- Forecast data (next 5 days)
-- Free tier: 60 calls/minute, 1,000,000 calls/month
+## Installation & Setup
 
-## Data & Methodology
+### Clone Repository
 
-### AQI Calculation
-The app uses the US EPA Air Quality Index standard:
-- **Good (0-50)**: Air quality is satisfactory
-- **Moderate (51-100)**: Acceptable for most people
-- **Unhealthy for Sensitive Groups (101-150)**: May affect sensitive individuals
-- **Unhealthy (151-200)**: Everyone may begin to experience effects
-- **Very Unhealthy (201-300)**: Health alert
-- **Hazardous (301+)**: Emergency conditions
+```bash
+git clone https://github.com/yourusername/aqi-analysis.git
+cd aqi-analysis
+```
 
-### Forecasting Model
-- Polynomial regression (degree 2) on historical PM2.5 data
-- Configurable training window (7-60 days)
-- Confidence intervals calculated using prediction variance
+### Create Virtual Environment
 
-## Contributing
+Windows:
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+Linux/macOS:
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+### Install Dependencies
+
+```bash
+pip install -r scripts/requirements.txt
+```
+
+### Configure API Key
+
+Create a `.env` file and add:
+
+```env
+OPENWEATHER_API_KEY=your_api_key
+```
+
+### Run Application
+
+```bash
+streamlit run app.py
+```
+
+Application will launch on:
+
+```bash
+http://localhost:8501
+```
+
+---
+
+## AQI Categories
+
+| AQI Range | Category |
+|------------|-----------|
+| 0–50 | Good |
+| 51–100 | Moderate |
+| 101–150 | Unhealthy for Sensitive Groups |
+| 151–200 | Unhealthy |
+| 201–300 | Very Unhealthy |
+| 301+ | Hazardous |
+
+---
+
+## Future Improvements
+
+- Deep learning-based AQI prediction models
+- Geographic heatmap visualization
+- Health recommendation system
+- Mobile application integration
+- Weather parameter correlation analysis
+
+---
+
+## Applications
+
+- Environmental monitoring
+- Pollution trend analysis
+- Public health awareness
+- Smart city initiatives
+- Research and data analysis
+
+---
+
+## Acknowledgements
+
+- OpenWeatherMap API
+- Streamlit
+- Python open-source ecosystem
+
+---
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Acknowledgments
-
-- OpenWeatherMap for providing the Air Pollution API
-- Streamlit for the excellent web framework
-- The open-source community for the amazing Python libraries
-
-## Support
-
-For issues, questions, or suggestions, please open an issue on GitHub.
-
----
+This project is developed for educational and research purposes.

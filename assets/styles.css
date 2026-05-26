@@ -1,0 +1,206 @@
+/* ============================= */
+/* GLOBAL APP STYLING */
+/* ============================= */
+
+.stApp {
+    background:
+        linear-gradient(
+            135deg,
+            #0f172a,
+            #111827,
+            #1e293b
+        );
+
+    color: white;
+}
+
+
+/* ============================= */
+/* SIDEBAR */
+/* ============================= */
+
+section[data-testid="stSidebar"] {
+    background:
+        rgba(17, 24, 39, 0.95);
+
+    border-right:
+        1px solid rgba(255,255,255,0.08);
+}
+
+
+/* ============================= */
+/* METRIC CARDS */
+/* ============================= */
+
+[data-testid="stMetric"] {
+
+    background:
+        rgba(255,255,255,0.05);
+
+    border:
+        1px solid rgba(255,255,255,0.08);
+
+    border-radius: 20px;
+
+    padding: 20px;
+
+    backdrop-filter: blur(14px);
+
+    box-shadow:
+        0 8px 32px rgba(0,0,0,0.35);
+
+    transition: all 0.3s ease;
+}
+
+[data-testid="stMetric"]:hover {
+
+    transform: translateY(-4px);
+
+    border:
+        1px solid rgba(59,130,246,0.4);
+}
+
+
+/* ============================= */
+/* HEADERS */
+/* ============================= */
+
+h1, h2, h3, h4 {
+
+    color: white !important;
+
+    font-weight: 700 !important;
+}
+
+
+/* ============================= */
+/* BUTTONS */
+/* ============================= */
+
+.stButton > button {
+
+    background:
+        linear-gradient(
+            to right,
+            #2563eb,
+            #7c3aed
+        );
+
+    color: white;
+
+    border: none;
+
+    border-radius: 14px;
+
+    padding: 12px 18px;
+
+    font-weight: 600;
+
+    transition: all 0.3s ease;
+}
+
+.stButton > button:hover {
+
+    transform: scale(1.03);
+
+    box-shadow:
+        0 0 20px rgba(59,130,246,0.4);
+}
+
+
+/* ============================= */
+/* TABS */
+/* ============================= */
+
+.stTabs [data-baseweb="tab"] {
+
+    background:
+        rgba(255,255,255,0.05);
+
+    border-radius: 12px;
+
+    margin-right: 8px;
+
+    padding: 10px 18px;
+}
+
+
+/* ============================= */
+/* INPUTS */
+/* ============================= */
+
+.stTextInput > div > div > input {
+
+    background:
+        rgba(255,255,255,0.05);
+
+    color: white;
+
+    border-radius: 12px;
+}
+
+
+/* ============================= */
+/* DATAFRAMES */
+/* ============================= */
+
+[data-testid="stDataFrame"] {
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    border:
+        1px solid rgba(255,255,255,0.08);
+}
+
+
+/* ============================= */
+/* ALERT BOXES */
+/* ============================= */
+
+.stAlert {
+
+    border-radius: 16px;
+}
+
+
+/* ============================= */
+/* CUSTOM GLASS CARD */
+/* ============================= */
+
+.glass-card {
+
+    background:
+        rgba(255,255,255,0.05);
+
+    border:
+        1px solid rgba(255,255,255,0.08);
+
+    border-radius: 22px;
+
+    padding: 24px;
+
+    backdrop-filter: blur(14px);
+
+    box-shadow:
+        0 8px 32px rgba(0,0,0,0.35);
+
+    margin-bottom: 20px;
+}
+
+
+/* ============================= */
+/* FOOTER */
+/* ============================= */
+
+.footer {
+
+    text-align: center;
+
+    color: rgba(255,255,255,0.6);
+
+    padding-top: 30px;
+
+    font-size: 14px;
+}
