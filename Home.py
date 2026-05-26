@@ -4,10 +4,6 @@ import warnings
 import plotly.express as px
 
 from config.settings import *
-
-from database.models import initialize_database
-from database.db import get_connection
-
 from services.aqi_service import (
     fetch_aqi_data
 )
