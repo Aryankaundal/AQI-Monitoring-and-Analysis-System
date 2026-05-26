@@ -4,33 +4,14 @@ import warnings
 import plotly.express as px
 
 from config.settings import *
-from services.aqi_service import (
-    fetch_aqi_data
-)
 
-from services.geocoding_service import (
-    get_coordinates
-)
-
+from services.aqi_service import fetch_aqi_data
+from services.geocoding_service import get_coordinates
 from services.health_service import (
     generate_health_advisory,
     calculate_environmental_risk,
     get_precautions
 )
-
-from ml.forecasting import (
-    generate_historical_data,
-    forecast_aqi,
-    calculate_forecast_confidence
-)
-
-from utils.charts import (
-    create_aqi_gauge,
-    create_pollutant_chart,
-    create_forecast_chart
-)
-
-warnings.filterwarnings("ignore")
 
 # =====================================================
 # PAGE CONFIG
@@ -56,12 +37,6 @@ def load_css():
         )
 
 load_css()
-
-# =====================================================
-# INITIALIZE DATABASE
-# =====================================================
-
-initialize_database()
 
 # =====================================================
 # API VALIDATION
