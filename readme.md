@@ -3,7 +3,7 @@
 A web-based Air Quality Index (AQI) monitoring and forecasting application developed using Python and Streamlit. The system provides real-time air quality insights, pollutant analysis, trend visualization, and machine learning-based forecasting for Indian cities.
 
 ## Live Demo
-https://air-quality-analysis-olnmtutzp5vszazg8t8xny.streamlit.app/
+[https://air-quality-analysis-olnmtutzp5vszazg8t8xny.streamlit.app/](https://aqi-monitoring-and-analysis-system-yumbknn4sh5an2bw6pdn6m.streamlit.app/]
 
 ---
 
